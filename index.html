@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="cdn.prod.website-files.com/66de2f1572bcf866302fd41c/css/saisei-sbj.shared.a0229ce79.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../cdn.prod.website-files.com/66de2f1572bcf866302fd41c/css/saisei-sbj.shared.a0229ce79.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
       ! function(o, c) {
         var n = c.documentElement,
@@ -24,7 +24,7 @@
     </script>
     <link href="./assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="./assets/webclip.png" rel="apple-touch-icon" />
-    <script type="module" src="saisei-one.vercel.app/main.js"></script>
+    <script type="module" src="../../saisei-one.vercel.app/main.js"></script>
     <style>
       ::-webkit-scrollbar {
         width: 0px !important;
@@ -46,209 +46,328 @@
       }
     </style>
     <style>
-      /* Footer alignment fix */
-      body[data-page="project-detail"] .footer_top.u-container.u-grid-custom {
-        align-items: start; /* Align grid items to the top */
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal columns */
-        gap: 2rem;
+      .home_intro[data-theme="light"],
+      .scroll_section[data-theme="light"],
+      .home_sustain[data-theme="light"],
+      .home_service[data-theme="light"],
+      .g_cta[data-theme="light"] {
+        --theme--background: rgb(36, 44, 39);
+        --theme--text: var(--swatch--light);
+        --theme--border: rgb(221, 168, 88);
+        
+        /* Button overrides */
+        --button--background: transparent;
+        --button--border: rgb(221, 168, 88);
+        --button--text: rgb(221, 168, 88);
+        --button--background-hover: rgb(221, 168, 88);
+        --button--text-hover: rgb(36, 44, 39);
+        --button--border-hover: rgb(221, 168, 88);
       }
 
-      /* Target the right column containing the SVG and contact info */
-      body[data-page="project-detail"] .footer_info_col.u-column-custom {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; /* Align items at the start */
-        gap: 1rem; /* Small gap between SVG and contact info */
+      .home_intro .btn_whipe,
+      .home_sustain .btn_whipe,
+      .home_service .btn_whipe,
+      .g_cta .btn_whipe {
+          background-color: rgb(221, 168, 88);
       }
 
-      /* Make the SVG container take up appropriate space */
-      body[data-page="project-detail"] .footer_info_svg_container {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 3rem;
-      }
-      
-      body[data-page="project-detail"] .footer_info_svg {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
+      /* Navigation Menu Color Overrides */
+      .menu_panel_left,
+      .menu_panel_right {
+        background-color: rgb(36, 44, 39) !important;
       }
 
-      /* Style the contact info section */
-      body[data-page="project-detail"] .footer_info_row.u-grid-custom {
-        margin-top: 0; /* Remove any top margin */
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal columns for contact info */
-        gap: 4rem;
-        padding-left: 12%; /* Move content to align with PR in logo */
-        padding-right: 5%; /* Balance the layout */
+      .menu_panel_left,
+      .menu_panel_left .menu_nav_link,
+      .menu_panel_right,
+      .menu_panel_right .m_panel_info_title,
+      .menu_panel_right .menu_c_link,
+      .menu_panel_right .m_panel_svg_icon,
+      .menu_panel_right .m_panel_info_link,
+      .menu_panel_right .menu_credit_close_txt,
+      .menu_panel_right .menu_credit_p p,
+      .menu_panel_right .credit_list_item,
+      .menu_panel_right .menu_credit_disclaimer {
+        color: rgb(221, 168, 88) !important;
       }
       
-      /* Style the contact info items */
-      body[data-page="project-detail"] .footer_info_title {
-        font-weight: bold;
-        margin-bottom: 0.75rem;
-        letter-spacing: 0.05em;
-      }
-      
-      body[data-page="project-detail"] .footer_info_item {
-        margin-bottom: 2rem;
-      }
-      
-      /* Style the contact info links */
-      body[data-page="project-detail"] .footer_info_link {
-        font-size: 0.95rem;
-        letter-spacing: 0.02em;
-      }
-      
-      body[data-page="project-detail"] .footer_info_social {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      
-      /* Ensure proper grid layout for the contact info */
-      body[data-page="project-detail"] .footer_info_left,
-      body[data-page="project-detail"] .footer_info_right {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      /* Adjust left column alignment */
-      body[data-page="project-detail"] .footer_info_left {
-        padding-left: 5%; /* Slight offset to align with PR in logo */
+      .menu_panel_right .menu_ast_path {
+        fill: rgb(221, 168, 88) !important;
       }
 
-      /* Responsive adjustments for smaller screens */
-      @media (max-width: 991px) {
-        /* Stack elements in mobile view */
-        body[data-page="project-detail"] .footer_top.u-container.u-grid-custom {
-            display: flex;
-            flex-direction: column;
-            row-gap: 3rem;
-        }
+      .menu_panel_right .close_btn {
+        background-color: transparent !important;
+        border-color: rgb(221, 168, 88) !important;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+      
+      .menu_panel_right .close_btn .btn_main_text {
+        color: rgb(221, 168, 88) !important;
+        transition: color 0.4s ease;
+      }
 
-        /* Full width columns on mobile */
-        body[data-page="project-detail"] .footer_nav_col,
-        body[data-page="project-detail"] .footer_info_col {
-          width: 100%;
-        }
+      .menu_panel_right .close_btn:hover {
+        background-color: rgb(221, 168, 88) !important;
+      }
 
-        /* Position SVG and contact info correctly on mobile */
-        body[data-page="project-detail"] .footer_info_col.u-column-custom {
-          align-items: flex-start;
-          margin-top: 2rem;
-          display: flex;
-          flex-direction: column;
-        }
-        
-        /* Adjust SVG container for mobile */
-        body[data-page="project-detail"] .footer_info_svg_container {
-          margin-bottom: 3rem;
-          width: 100%;
-          max-width: 400px;
-        }
-        
-        /* Maintain two-column layout for contact info on mobile */
-        body[data-page="project-detail"] .footer_info_row.u-grid-custom {
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          width: 100%;
-          padding-left: 0; /* Reset the desktop padding for mobile */
-        }
-        
-        /* Left-align contact info items on mobile */
-        body[data-page="project-detail"] .footer_info_item {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
-          margin-bottom: 2rem;
-        }
-        
-        /* Left-align social links on mobile */
-        body[data-page="project-detail"] .footer_info_social {
-          align-items: flex-start;
-        }
-        
-        /* Maintain column spacing on mobile */
-        body[data-page="project-detail"] .footer_info_left,
-        body[data-page="project-detail"] .footer_info_right {
-          gap: 1.5rem;
-        }
-        
-        /* Reset left column padding on mobile */
-        body[data-page="project-detail"] .footer_info_left {
-          padding-left: 0;
-        }
-        
-        /* Ensure proper text size on mobile */
-        body[data-page="project-detail"] .footer_info_title div,
-        body[data-page="project-detail"] .footer_info_link a,
-        body[data-page="project-detail"] .footer_info_link div {
-          font-size: 0.9rem;
-          letter-spacing: 0.05em;
-        }
+      .menu_panel_right .close_btn:hover .btn_main_text {
+        color: rgb(36, 44, 39) !important;
+      }
+
+      .menu_nav_link .menu_link_whipe {
+        background-color: rgb(221, 168, 88);
+      }
+      
+      .menu_nav_link.w--current .menu_nav_item div,
+      .menu_nav_link:hover .menu_nav_item div,
+      .menu_nav_link.w--current .menu_nav_num div,
+      .menu_nav_link:hover .menu_nav_num div {
+          color: rgb(36, 44, 39) !important;
       }
     </style>
     <style>
-      /* Fix for SVG animation in footer */
-      .footer_info_svg text.luxury-text {
-        opacity: 1 !important;
-        visibility: visible !important;
+      /* Main Button Color Invert Effect */
+      .btn_main_wrap[data-button-style="primary"],
+      .btn_main_wrap.is-secondary,
+      .btn_main_wrap {
+        background: transparent !important;
+        border: 1.5px solid rgb(221, 168, 88) !important;
+        transition: background-color 0.4s, color 0.4s;
       }
-      /* Ensure animation runs properly */
-      .footer_info_svg_container {
-        opacity: 1 !important;
-        visibility: visible !important;
+      .btn_main_wrap .btn_main_text,
+      .btn_main_wrap .btn_main_text.abs,
+      .btn_main_wrap .btn_main_text.is_abs {
+        color: rgb(221, 168, 88) !important;
+        transition: color 0.4s;
       }
-      /* Prevent any other animations from affecting the SVG */
-      .footer_info_svg {
-        /* Removed transform and animation overrides */
+      .btn_main_wrap .btn_whipe {
+        background-color: rgb(221, 168, 88) !important;
+        transition: background-color 0.4s;
       }
-      /* Removed transform and animation overrides for .draw-path */
+      .btn_main_wrap[data-button-style="primary"]:hover,
+      .btn_main_wrap.is-secondary:hover,
+      .btn_main_wrap:hover {
+        background: rgb(221, 168, 88) !important;
+      }
+      .btn_main_wrap[data-button-style="primary"]:hover .btn_main_text,
+      .btn_main_wrap.is-secondary:hover .btn_main_text,
+      .btn_main_wrap:hover .btn_main_text,
+      .btn_main_wrap[data-button-style="primary"]:hover .btn_main_text.abs,
+      .btn_main_wrap.is-secondary:hover .btn_main_text.abs,
+      .btn_main_wrap:hover .btn_main_text.abs,
+      .btn_main_wrap[data-button-style="primary"]:hover .btn_main_text.is_abs,
+      .btn_main_wrap.is-secondary:hover .btn_main_text.is_abs,
+      .btn_main_wrap:hover .btn_main_text.is_abs {
+        color: rgb(36, 44, 39) !important;
+      }
     </style>
     <style>
-      /* Navigation scroll behavior */
-      .nav {
-        transition: transform 0.4s ease;
+      /* HERO & HEADER GOLD COLOR OVERRIDES */
+      .nav_logo_text,
+      .nav_est {
+        color: rgb(221, 168, 88) !important;
       }
-      
-      .nav.hidden {
-        transform: translateY(-100%);
+      .hero_svg_wrap .luxury-text {
+        stroke: rgb(221, 168, 88) !important;
+        fill: rgb(221, 168, 88) !important;
+      }
+      .hero_content p,
+      .hero_content_top p {
+        color: rgb(221, 168, 88) !important;
       }
     </style>
-    <script>
-      // Ensure SVG elements don't move
-      document.addEventListener('DOMContentLoaded', function() {
-        // Removed JS that forcibly sets transform/animation/position on SVG paths and letters
-      });
-    </script>
-    <script>
-      // Script to hide/show navigation on scroll
-      document.addEventListener('DOMContentLoaded', function() {
-        let lastScrollTop = 0;
-        const nav = document.querySelector('.nav');
-        
-        window.addEventListener('scroll', function() {
-          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-          if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down & past threshold - hide nav
-            nav.classList.add('hidden');
-          } else {
-            // Scrolling up - show nav
-            nav.classList.remove('hidden');
-          }
-          
-          lastScrollTop = scrollTop;
-        });
-      });
-    </script>
-</head>
+        <style>
+      /* Consistent gold color for project titles and counters */
+      .home_project_title, .home_project_title *, .home_project_num, .home_project_num * {
+        color: rgb(221, 168, 88) !important;
+      }
+      /* Consistent gold color for all footer text */
+      .footer, .footer *, .footer_nav_link {
+        color: rgb(221, 168, 88) !important;
+      }
+      .footer {
+        background-color: #111814 !important;
+      }
+      /* Ensure footer nav menu items specifically have gold color */
+      .footer_nav_list .footer_nav_link div {
+        color: rgb(221, 168, 88) !important;
+      }
+      /* Direct targeting of footer navigation links */
+      .footer_nav_item a.footer_nav_link div[data-hover="link"],
+      .footer_nav_item a.footer_nav_link div[data-anim="title"],
+      .footer_nav_link * {
+        color: rgb(221, 168, 88) !important;
+        opacity: 1 !important;
+      }
+       /* Consistent gold color for quotes section */
+      .g_quotes, .g_quotes * {
+        color: rgb(221, 168, 88) !important;
+      }
+      
+      /* Add animated gold divider lines for project and art detail sections */
+      .project-section-divider,
+      .art-detail-divider {
+        position: relative;
+      }
+      
+      .project-section-divider::before,
+      .project-section-divider::after,
+      .art-detail-divider::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(221, 168, 88);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1.5s ease;
+        z-index: 10;
+      }
+      
+      .project-section-divider::before,
+      .art-detail-divider::before {
+        top: 0;
+      }
+      
+      .project-section-divider::after {
+        bottom: 0;
+      }
+      
+      .project-section-divider.in-view::before,
+      .project-section-divider.in-view::after,
+      .art-detail-divider.in-view::before {
+        transform: scaleX(1);
+      }
+    </style>
+    <style>
+      /* Footer menu nav links: gold color for all children */
+      .footer .footer_nav_link * {
+        color: rgb(221, 168, 88) !important;
+      }
+    </style>
+    <style>
+      /* Gold/dark theme for nav, lines, and main background */
+      .nav_logo_text,
+      .nav_est {
+        color: rgb(221, 168, 88) !important;
+      }
+      .nav .line {
+        background-color: rgb(221, 168, 88) !important;
+      }
+      body[data-theme="dark"],
+      .main,
+      .main > section {
+        background: #111814 !important;
+        color: rgb(221, 168, 88) !important;
+      }
+    </style>
+    <style>
+      /* Menu panel styles copied from contact-us.html for gold/dark theme, hover, and transitions */
+      .menu_panel_left,
+      .menu_panel_right {
+        background-color: rgb(36, 44, 39) !important;
+      }
+
+      .menu_panel_left,
+      .menu_panel_left .menu_nav_link,
+      .menu_panel_right,
+      .menu_panel_right .m_panel_info_title,
+      .menu_panel_right .menu_c_link,
+      .menu_panel_right .m_panel_svg_icon,
+      .menu_panel_right .m_panel_info_link,
+      .menu_panel_right .menu_credit_close_txt,
+      .menu_panel_right .menu_credit_p p,
+      .menu_panel_right .credit_list_item,
+      .menu_panel_right .menu_credit_disclaimer {
+        color: rgb(221, 168, 88) !important;
+      }
+      
+      .menu_panel_right .menu_ast_path {
+        fill: rgb(221, 168, 88) !important;
+      }
+
+      .menu_panel_right .close_btn {
+        background-color: transparent !important;
+        border-color: rgb(221, 168, 88) !important;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+      
+      .menu_panel_right .close_btn .btn_main_text {
+        color: rgb(221, 168, 88) !important;
+        transition: color 0.4s ease;
+      }
+
+      .menu_panel_right .close_btn:hover {
+        background-color: rgb(221, 168, 88) !important;
+      }
+
+      .menu_panel_right .close_btn:hover .btn_main_text {
+        color: rgb(36, 44, 39) !important;
+      }
+
+      .menu_nav_link .menu_link_whipe {
+        background-color: rgb(221, 168, 88);
+      }
+      
+      .menu_nav_link.w--current .menu_nav_item div,
+      .menu_nav_link:hover .menu_nav_item div,
+      .menu_nav_link.w--current .menu_nav_num div,
+      .menu_nav_link:hover .menu_nav_num div {
+          color: rgb(36, 44, 39) !important;
+      }
+    </style>
+    <style>
+      /* Gold on dark theme for consistency with contact-us.html */
+      .menu_panel_left, .menu_panel_right,
+      .menu_panel_left .menu_nav_link, .menu_panel_right .m_panel_info_title, .menu_panel_right .menu_c_link, .menu_panel_right .m_panel_svg_icon, .menu_panel_right .m_panel_info_link, .menu_panel_right .menu_credit_close_txt, .menu_panel_right .menu_credit_p p, .menu_panel_right .credit_list_item, .menu_panel_right .menu_credit_disclaimer {
+        color: rgb(221, 168, 88) !important;
+      }
+      .menu_panel_left, .menu_panel_right {
+        background-color: #111814 !important;
+      }
+      .menu_panel_left .menu_nav_link .menu_nav_item div,
+      .menu_panel_left .menu_nav_link .menu_nav_num div {
+        transition: color 0.4s;
+        color: rgb(221, 168, 88) !important;
+        background: none !important;
+      }
+      .menu_panel_left .menu_nav_link:hover .menu_link_whipe {
+        background-color: rgb(241 204 149) !important;
+      }
+      .menu_panel_left .menu_nav_link:hover .menu_nav_item div,
+      .menu_panel_left .menu_nav_link:hover .menu_nav_num div {
+        color: rgb(36, 44, 39) !important;
+        background: none !important;
+      }
+      .menu_panel_right [data-menu="c-item"] {
+        color: #fbf0da !important;
+      }
+      .menu_panel_right .m_panel_info_title [data-menu="c-item"] {
+        color: #D4A448 !important;
+      }
+      .menu_panel_right .m_panel_info_link,
+      .menu_panel_right .m_panel_info_link * {
+        color: #EAEAEA !important;
+      }
+    </style>
+    <style>
+      .menu_panel_left {
+        background-color: #111814 !important;
+      }
+      .menu_panel_right {
+        background-color: #202C25 !important;
+      }
+    </style>
+    <style>
+      /* Prevent white flash before images load: set background to site green for images only */
+      .g_visual_wrap,
+      .g_visual_wrap .g_visual_img,
+      .g_visual_wrap .u-cover-absolute {
+        background-color: #111814 !important;
+      }
+    </style>
+  </head>
   <body data-theme="dark" data-page="project-detail">
     <div class="page_wrap">
       <div class="page_code_wrap">
@@ -386,6 +505,7 @@
                 color: black;
               }
             }
+
 
             .wf-design-mode .g_clickable_wrap {
               z-index: -1;
@@ -746,6 +866,8 @@
       <div class="menu">
         <div class="menu_container">
           <div class="menu_panel_wrap u-hflex-center-center">
+            <!-- REPLACE FROM HERE -->
+            <!-- BEGIN: Menu panels copied from contact-us.html -->
             <nav data-menu="panel-left" class="menu_panel_left">
               <ul class="menu_nav_link_wrap u-vflex-left-stretch">
                 <a href="/" aria-current="page" class="menu_nav_link u-hflex-between-center w-inline-block w--current">
@@ -847,7 +969,7 @@
                   </div>
                   <div class="w-layout-vflex menu_kanji_wrap">
                     <div data-menu="kanji-white" class="menu_nav_kanji-num u-radius-round u-vflex-center-center">
-                      </svg>
+                      
                     </div>
                     <div class="menu_nav_kanji-txt"></div>
                   </div>
@@ -926,7 +1048,7 @@
                         <div data-menu="c-item">Email</div>
                       </div>
                       <div class="m_panel_info_link u-color-faded">
-                        <a data-hover="link" data-menu="c-item" href="mailto:?subject=Contact" class="menu_c_link"></a>
+                        <a data-hover="link" data-menu="c-item" href="mailto:ufficiotecnico@puccetticreazioni.com?subject=Contact" class="menu_c_link">ufficiotecnico@puccetticreazioni.com</a>
                       </div>
                     </div>
                     <div class="m_panel_info_item u-vflex-left-top">
@@ -934,7 +1056,7 @@
                         <div data-menu="c-item">Phone</div>
                       </div>
                       <div class="m_panel_info_link u-color-faded">
-                        <a data-hover="link" data-menu="c-item" href="tel:+39 3336 252402" class="menu_c_link">+39 3336 252402</a>
+                        <a data-hover="link" data-menu="c-item" href="tel:+390123456789" class="menu_c_link">+39 0123 456789</a>
                       </div>
                     </div>
                     <div class="m_panel_info_item u-vflex-left-top">
@@ -943,7 +1065,7 @@
                       </div>
                       <ul class="m_panel_info_social u-vflex-left-top">
                         <li class="m_panel_info_social-item u-color-faded">
-                          <a data-hover="link" data-menu="c-item" href="https://www.instagram.com/pr_creazioni/" class="menu_c_link">Instagram</a>
+                          <a data-hover="link" data-menu="c-item" href="index.html#" class="menu_c_link">Instagram</a>
                         </li>
                         <li class="m_panel_info_social-item u-color-faded">
                           <a data-hover="link" data-menu="c-item" href="index.html#" class="menu_c_link">Facebook</a>
@@ -999,11 +1121,13 @@
                         <a data-hover="link" data-menu="c-item" data-credit="c-open" href="index.html#" class="menu_c_link">disclaimer</a>
                       </div>
                     </div>
+    
+                    </div>
                   </div>
                   <div id="w-node-_5f03a1ba-8875-9f30-6154-9db07d7d0032-7d7cff4f" class="m_panel_info_wrap u-vflex-left-top u-gap-medium">
                     <div class="m_panel_info_item u-vflex-left-top">
                       <div class="m_panel_info_link">
-                        <div data-menu="c-item" class="menu_c_link">©2025 – SAISEI</div>
+                        <div data-menu="c-item" class="menu_c_link">©2025 – PR CREAZIONI</div>
                       </div>
                     </div>
                   </div>
@@ -1017,6 +1141,7 @@
                 </button>
               </div>
             </div>
+            <!-- END: Menu panels copied from contact-us.html -->
           </div>
           <div class="menu_credit_wrap">
             <div class="menu_credit_content u-vflex-center-bottom">
@@ -1116,138 +1241,147 @@
           </div>
         </div>
       </nav>
-      <main id="main" class="main">
+      <main id="main" class="main" data-theme="light">
         <section class="home_hero">
-          <figure class="g_visual_wrap u-cover-absolute">
-            <img class="g_visual_img u-cover-absolute" src="./resources/66de31ac32194f6e0e192eed_home_img_1.webp" alt="saisei interior design project" sizes="(max-width: 1923px) 100vw, 1923px" data-parallax="true" loading="eager" srcset="./resources/66de31ac32194f6e0e192eed_home_img_1.webp 1923w" />
-            <div STYLE="opacity: 65%;" data-loader="overlay" class="g_visual_overlay u-cover-absolute"></div>
-          </figure>
-          <div class="h_hero_container u-container u-vflex-left-bottom">
-            <div class="hero_layout u-grid-custom u-gap-medium">
-              <div class="hero_svg_wrap u-column-custom">
+          <div class="h_hero_container u-container u-vflex-left-bottom" style="position: relative; overflow: hidden;">
+            <figure class="g_visual_wrap u-cover-absolute">
+              <img class="g_visual_img u-cover-absolute" src="./resources/66de31ac32194f6e0e192eed_home_img_1.webp" alt="saisei interior design project" sizes="(max-width: 1923px) 100vw, 1923px" loading="eager" srcset="./resources/66de31ac32194f6e0e192eed_home_img_1.webp 1923w" />
+              <div STYLE="opacity: 65%;" data-loader="overlay" class="g_visual_overlay u-cover-absolute"></div>
+            </figure>
+            <div class="hero_layout u-gap-medium" style="position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; height: 85vh;">
+              <div class="hero_svg_wrap u-column-custom" style="text-align: center; padding-top: 2vh;">
                 <h1 aria-label="PR CREASIONI" class="hero_h1 u-sr-only">PR CREASIONI</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1443 390" fill="none" data-loader="svg" class="hero_svg">
-                  <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+                <svg xmlns="http://www.w3.org/2000/svg" width="10%" viewBox="0 0 1443 390" fill="none" data-loader="svg" class="hero_svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
-                    .luxury-text {
-                      font-family: 'Playfair Display', serif;
-                      font-size: 140px;
-                      fill: rgb(251, 240, 218);
-                      stroke: currentColor;
-                      stroke-width: 1;
-                      stroke-dasharray: 1000;
-                      stroke-dashoffset: 1000;
-                      opacity: 0;
-                      transform: translateY(20px);
-                      animation: draw 2s ease forwards, fadeInUp 0.8s ease-out forwards;
-                      dominant-baseline: middle;
-                    }
+    .luxury-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 140px;
+      fill: #87704F; /* Muted gold-brown fill */
+      stroke: #87704F; /* Matching stroke color */
+      stroke-width: 1;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: draw 2s ease forwards, fadeInUp 0.8s ease-out forwards;
+      dominant-baseline: middle;
+    }
 
-                    .luxury-text:nth-child(1) {
-                      animation-delay: 4.0s, 4.0s;
-                    }
+    .luxury-text.animated {
+      filter: drop-shadow(0 0 8px rgba(135, 112, 79, 0.8)); /* Glowing effect with #87704F */
+    }
 
-                    .luxury-text:nth-child(2) {
-                      animation-delay: 4.2s, 4.2s;
-                    }
+    .luxury-text:nth-child(1) {
+      animation-delay: 4.0s, 4.0s;
+    }
 
-                    .luxury-text:nth-child(3) {
-                      animation-delay: 4.4s, 4.4s;
-                    }
+    .luxury-text:nth-child(2) {
+      animation-delay: 4.2s, 4.2s;
+    }
 
-                    .luxury-text:nth-child(4) {
-                      animation-delay: 4.6s, 4.6s;
-                    }
+    .luxury-text:nth-child(3) {
+      animation-delay: 4.4s, 4.4s;
+    }
 
-                    .luxury-text:nth-child(5) {
-                      animation-delay: 4.8s, 4.8s;
-                    }
+    .luxury-text:nth-child(4) {
+      animation-delay: 4.6s, 4.6s;
+    }
 
-                    .luxury-text:nth-child(6) {
-                      animation-delay: 5.0s, 5.0s;
-                    }
+    .luxury-text:nth-child(5) {
+      animation-delay: 4.8s, 4.8s;
+    }
 
-                    .luxury-text:nth-child(7) {
-                      animation-delay: 5.2s, 5.2s;
-                    }
+    .luxury-text:nth-child(6) {
+      animation-delay: 5.0s, 5.0s;
+    }
 
-                    .luxury-text:nth-child(8) {
-                      animation-delay: 5.4s, 5.4s;
-                    }
+    .luxury-text:nth-child(7) {
+      animation-delay: 5.2s, 5.2s;
+    }
 
-                    .luxury-text:nth-child(9) {
-                      animation-delay: 5.6s, 5.6s;
-                    }
+    .luxury-text:nth-child(8) {
+      animation-delay: 5.4s, 5.4s;
+    }
 
-                    .luxury-text:nth-child(10) {
-                      animation-delay: 5.8s, 5.8s;
-                    }
+    .luxury-text:nth-child(9) {
+      animation-delay: 5.6s, 5.6s;
+    }
 
-                    .luxury-text:nth-child(11) {
-                      animation-delay: 6.0s, 6.0s;
-                    }
+    .luxury-text:nth-child(10) {
+      animation-delay: 5.8s, 5.8s;
+    }
 
-                    .luxury-text:nth-child(12) {
-                      animation-delay: 6.2s, 6.2s;
-                    }
+    .luxury-text:nth-child(11) {
+      animation-delay: 6.0s, 6.0s;
+    }
 
-                    @keyframes draw {
-                      to {
-                        stroke-dashoffset: 0;
-                      }
-                    }
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
 
-                    @keyframes fadeInUp {
-                      0% {
-                        opacity: 0;
-                        transform: translateY(20px);
-                      }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-                      100% {
-                        opacity: 1;
-                        transform: translateY(0);
-                      }
-                    }
-                  </style>
-                  <text x="120" y="220" class="luxury-text">P</text>
-                  <text x="200" y="220" class="luxury-text">R</text>
-                  <text x="320" y="220" class="luxury-text">C</text>
-                  <text x="410" y="220" class="luxury-text">R</text>
-                  <text x="500" y="220" class="luxury-text">E</text>
-                  <text x="590" y="220" class="luxury-text">A</text>
-                  <text x="680" y="220" class="luxury-text">Z</text>
-                  <text x="770" y="220" class="luxury-text">I</text>
-                  <text x="830" y="220" class="luxury-text">O</text>
-                  <text x="920" y="220" class="luxury-text">N</text>
-                  <text x="1010" y="220" class="luxury-text">I</text>
-                </svg>
+    /* Apply glowing effect after animation */
+    .luxury-text {
+      animation-fill-mode: forwards;
+    
+  </style>
+  <g transform="translate(180, -140)">
+    <text x="120" y="220" class="luxury-text animated">P</text>
+    <text x="200" y="220" class="luxury-text animated">R</text>
+    <text x="320" y="220" class="luxury-text animated">C</text>
+    <text x="410" y="220" class="luxury-text animated">R</text>
+    <text x="500" y="220" class="luxury-text animated">E</text>
+    <text x="590" y="220" class="luxury-text animated">A</text>
+    <text x="680" y="220" class="luxury-text animated">Z</text>
+    <text x="770" y="220" class="luxury-text animated">I</text>
+    <text x="830" y="220" class="luxury-text animated">O</text>
+    <text x="920" y="220" class="luxury-text animated">N</text>
+    <text x="1010" y="220" class="luxury-text animated">I</text>
+  </g>
+</svg>
                 </a>
               </div>
-              <div class="hero_content u-column-custom u-vflex-left-between u-gap-medium">
+              <div class="hero_content u-column-custom u-vflex-left-between u-gap-medium" style="align-self: flex-end;">
                 <div class="hero_content_top u-vflex-left-top u-gap-main">
                   <div class="g_paragraph_wrap is-global-hero u-text-">
                     <p data-loader="para">Where Italian craftsmanship meets timeless elegance, transforming spaces with the world's finest marble selections.</p>
                   </div>
                 </div>
                 <div class="scroll_to_explore">
-                  <div data-loader="scroll-txt"></div>
+                  <div data-loader="scroll-txt">scroll</div>
                 </div>
               </div>
             </div>
           </div>
+ <div class="line_wrapper is-abs">
+            <div data-anim="line" class="line"></div>
         </section>
-        <section data-padding-bottom="main" data-theme="light" data-padding-top="small" class="home_intro">
+        
+        <section data-padding-bottom="main" data-padding-top="small" class="home_intro">
           <div class="h_intro_container u-container">
             <div class="h_intro_layout u-grid-custom">
               <div class="h_intro_col-l u-column-custom u-vflex-left-between">
                 <div class="kanji_wrap u-vflex-center-center u-gap-xsmall">
                   <div class="kanji_content u-vflex-center-center u-gap-xsmall">
                     <div class="kanji_title">
-                      <div data-anim="title">(Italian Heritage)</div>
+                      <div data-anim="title">(den tou)</div>
                     </div>
                     <div class="kanji_title_small">
-                      <div data-anim="title"></div>
+                      <div data-anim="title">Tradition</div>
                     </div>
                   </div>
                 </div>
@@ -1305,7 +1439,9 @@
             <div data-anim="line" class="line"></div>
           </div>
         </section>
+    
         <section data-padding-top="main" data-theme="light" class="scroll_section">
+         
           <div data-big-text="trigger" class="sticky_scroll_trigger">
             <div data-big-text="trigger" class="sticky_track">
               <div class="sticky_elements">
@@ -1383,121 +1519,176 @@
                 </div>
               </div>
             </div>
+
           </div>
-          <div data-theme="dark" class="home_project_wrap w-dyn-list">
-            <div role="list" class="home_project_list w-dyn-items">
-              <div role="listitem" class="home_project_item u-container u-vflex-center-center w-dyn-item">
-                <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
-                  <div class="g_visual_background u-cover-absolute"></div>
-                  <img src="./resources/66de987342ebf9febb7dc065_Sizhuka_Img_01.webp" loading="lazy" data-parallax="true" alt="Shizuka Gardens" class="g_visual_img u-cover-absolute" />
-                  <div STYLE="opacity: 70%;" class="g_visual_overlay u-cover-absolute"></div>
-                </figure>
-                <div class="home_project_content u-grid-custom">
-                  <div class="home_project_info u-column-custom u-vflex-left-bottom u-gap-medium">
-                    <div class="home_project_title u-text-transform-uppercase">
-                      <h3 data-anim-para="true">Carrara Elegance</h3>
+          <style>
+            /* Add animated gold divider lines at top and bottom of project section */
+            .project-section-divider {
+              position: relative;
+              margin-bottom: 0; /* Ensure no margin at bottom */
+              padding-bottom: 1px; /* Add slight padding to ensure line is visible */
+            }
+            
+            .project-section-divider::before,
+            .project-section-divider::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: rgb(221, 168, 88);
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: transform 1.5s ease;
+              z-index: 10;
+            }
+            
+            .project-section-divider::before {
+              top: 0;
+            }
+            
+            .project-section-divider::after {
+              bottom: 0;
+            }
+            
+            .project-section-divider.in-view::before,
+            .project-section-divider.in-view::after {
+              transform: scaleX(1);
+            }
+          </style>
+          <script>
+            // Add intersection observer to trigger animation when sections with dividers are in view
+            document.addEventListener('DOMContentLoaded', function() {
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                  }
+                });
+              }, { threshold: 0.1 });
+              
+              // Observe the project section
+              const projectSection = document.querySelector('.project-section-divider');
+              if (projectSection) {
+                observer.observe(projectSection);
+              }
+            });
+          </script>
+          <div data-theme="dark" class="home_project_wrap w-dyn-list project-section-divider">
+              <div role="list" class="home_project_list w-dyn-items">
+                <div role="listitem" class="home_project_item u-container u-vflex-center-center w-dyn-item">
+                  <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
+                    <div class="g_visual_background u-cover-absolute"></div>
+                    <img src="./resources/66de987342ebf9febb7dc065_Sizhuka_Img_01.webp" loading="lazy" data-parallax="true" alt="Shizuka Gardens" class="g_visual_img u-cover-absolute" />
+                    <div STYLE="opacity: 70%;" class="g_visual_overlay u-cover-absolute"></div>
+                  </figure>
+                  <div class="home_project_content u-grid-custom">
+                    <div class="home_project_info u-column-custom u-vflex-left-bottom u-gap-medium">
+                      <div class="home_project_title u-text-transform-uppercase">
+                        <h3 data-anim-para="true">Carrara Elegance</h3>
+                      </div>
+                    </div>
+                    <div class="home_project_right u-column-custom u-vflex-left-between">
+                      <div class="home_project_num">
+                        <div data-anim="title">1</div>
+                        <div data-anim="title">/</div>
+                        <div data-anim="title">3</div>
+                      </div>
+                      <div data-anim="button" data-button-style="secondary" class="btn_main_wrap is-secondary">
+                        <div data-button="whipe" class="btn_whipe"></div>
+                        <div aria-hidden="true" class="btn_main_layout u-gap-xsmall u-hflex-center-center">
+                          <div data-button="text-rel" class="btn_main_text is-secondary">see project</div>
+                          <div data-button="text-abs" class="btn_main_text abs_secondary">see project</div>
+                        </div>
+                        <div class="g_clickable_wrap u-cover-absolute u-radius-inherit u-zindex-3">
+                          <a href="/project/carrara-elegance" class="g_clickable_link u-cover-absolute u-radius-inherit u-display-block w-inline-block">
+                            <span class="g_clickable_text u-sr-only">Button Text</span>
+                          </a>
+                          <button type="button" class="g_clickable_btn u-cover-absolute u-radius-inherit u-display-none">
+                            <span class="g_clickable_text u-sr-only">Button Text</span>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="home_project_right u-column-custom u-vflex-left-between">
-                    <div class="home_project_num">
-                      <div data-anim="title">1</div>
-                      <div data-anim="title">/</div>
-                      <div data-anim="title">3</div>
-                    </div>
-                    <div data-anim="button" data-button-style="secondary" class="btn_main_wrap is-secondary">
-                      <div data-button="whipe" class="btn_whipe"></div>
-                      <div aria-hidden="true" class="btn_main_layout u-gap-xsmall u-hflex-center-center">
-                        <div data-button="text-rel" class="btn_main_text is-secondary">see project</div>
-                        <div data-button="text-abs" class="btn_main_text abs_secondary">see project</div>
+                </div>
+                <div role="listitem" class="home_project_item u-container u-vflex-center-center w-dyn-item">
+                  <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
+                    <div class="g_visual_background u-cover-absolute"></div>
+                    <img src="./resources/66de9995ab37d10f78ca6527_kawa_loft_image_05.webp" loading="lazy" data-parallax="true" alt="Kawa Lofts" class="g_visual_img u-cover-absolute" />
+                    <div STYLE="opacity: 70%;" class="g_visual_overlay u-cover-absolute"></div>
+                  </figure>
+                  <div class="home_project_content u-grid-custom">
+                    <div class="home_project_info u-column-custom u-vflex-left-bottom u-gap-medium">
+                      <div class="home_project_title u-text-transform-uppercase">
+                        <h3 data-anim-para="true">Calacatta Luxury</h3>
                       </div>
-                      <div class="g_clickable_wrap u-cover-absolute u-radius-inherit u-zindex-3">
-                        <a href="/project/carrara-elegance" class="g_clickable_link u-cover-absolute u-radius-inherit u-display-block w-inline-block">
-                          <span class="g_clickable_text u-sr-only">Button Text</span>
-                        </a>
-                        <button type="button" class="g_clickable_btn u-cover-absolute u-radius-inherit u-display-none">
-                          <span class="g_clickable_text u-sr-only">Button Text</span>
-                        </button>
+                    </div>
+                    <div class="home_project_right u-column-custom u-vflex-left-between">
+                      <div class="home_project_num">
+                        <div data-anim="title">2</div>
+                        <div data-anim="title">/</div>
+                        <div data-anim="title">3</div>
+                      </div>
+                      <div data-anim="button" data-button-style="secondary" class="btn_main_wrap is-secondary">
+                        <div data-button="whipe" class="btn_whipe"></div>
+                        <div aria-hidden="true" class="btn_main_layout u-gap-xsmall u-hflex-center-center">
+                          <div data-button="text-rel" class="btn_main_text is-secondary">see project</div>
+                          <div data-button="text-abs" class="btn_main_text abs_secondary">see project</div>
+                        </div>
+                        <div class="g_clickable_wrap u-cover-absolute u-radius-inherit u-zindex-3">
+                          <a href="/project/calacatta-luxury" class="g_clickable_link u-cover-absolute u-radius-inherit u-display-block w-inline-block">
+                            <span class="g_clickable_text u-sr-only">Button Text</span>
+                          </a>
+                          <button type="button" class="g_clickable_btn u-cover-absolute u-radius-inherit u-display-none">
+                            <span class="g_clickable_text u-sr-only">Button Text</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div role="listitem" class="home_project_item u-container u-vflex-center-center w-dyn-item">
+                  <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
+                    <div class="g_visual_background u-cover-absolute"></div>
+                    <img src="./resources/66de9b4d4c97a9b2d89c0973_Kensei_img_01.webp" loading="lazy" data-parallax="true" alt="Kinsei Pavilion" class="g_visual_img u-cover-absolute" />
+                    <div STYLE="opacity: 70%;" class="g_visual_overlay u-cover-absolute"></div>
+                  </figure>
+                  <div class="home_project_content u-grid-custom">
+                    <div class="home_project_info u-column-custom u-vflex-left-bottom u-gap-medium">
+                      <div class="home_project_title u-text-transform-uppercase">
+                        <h3 data-anim-para="true">Statuario Premium</h3>
+                      </div>
+                    </div>
+                    <div class="home_project_right u-column-custom u-vflex-left-between">
+                      <div class="home_project_num">
+                        <div data-anim="title">3</div>
+                        <div data-anim="title">/</div>
+                        <div data-anim="title">3</div>
+                      </div>
+                      <div data-anim="button" data-button-style="secondary" class="btn_main_wrap is-secondary">
+                        <div data-button="whipe" class="btn_whipe"></div>
+                        <div aria-hidden="true" class="btn_main_layout u-gap-xsmall u-hflex-center-center">
+                          <div data-button="text-rel" class="btn_main_text is-secondary">see project</div>
+                          <div data-button="text-abs" class="btn_main_text abs_secondary">see project</div>
+                        </div>
+                        <div class="g_clickable_wrap u-cover-absolute u-radius-inherit u-zindex-3">
+                          <a href="/project/statuario-premium" class="g_clickable_link u-cover-absolute u-radius-inherit u-display-block w-inline-block">
+                            <span class="g_clickable_text u-sr-only">Button Text</span>
+                          </a>
+                          <button type="button" class="g_clickable_btn u-cover-absolute u-radius-inherit u-display-none">
+                            <span class="g_clickable_text u-sr-only">Button Text</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div role="listitem" class="home_project_item u-container u-vflex-center-center w-dyn-item">
-                <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
-                  <div class="g_visual_background u-cover-absolute"></div>
-                  <img src="./resources/66de9995ab37d10f78ca6527_kawa_loft_image_05.webp" loading="lazy" data-parallax="true" alt="Kawa Lofts" class="g_visual_img u-cover-absolute" />
-                  <div STYLE="opacity: 70%;" class="g_visual_overlay u-cover-absolute"></div>
-                </figure>
-                <div class="home_project_content u-grid-custom">
-                  <div class="home_project_info u-column-custom u-vflex-left-bottom u-gap-medium">
-                    <div class="home_project_title u-text-transform-uppercase">
-                      <h3 data-anim-para="true">Calacatta Luxury</h3>
-                    </div>
-                  </div>
-                  <div class="home_project_right u-column-custom u-vflex-left-between">
-                    <div class="home_project_num">
-                      <div data-anim="title">2</div>
-                      <div data-anim="title">/</div>
-                      <div data-anim="title">3</div>
-                    </div>
-                    <div data-anim="button" data-button-style="secondary" class="btn_main_wrap is-secondary">
-                      <div data-button="whipe" class="btn_whipe"></div>
-                      <div aria-hidden="true" class="btn_main_layout u-gap-xsmall u-hflex-center-center">
-                        <div data-button="text-rel" class="btn_main_text is-secondary">see project</div>
-                        <div data-button="text-abs" class="btn_main_text abs_secondary">see project</div>
-                      </div>
-                      <div class="g_clickable_wrap u-cover-absolute u-radius-inherit u-zindex-3">
-                        <a href="/project/calacatta-luxury" class="g_clickable_link u-cover-absolute u-radius-inherit u-display-block w-inline-block">
-                          <span class="g_clickable_text u-sr-only">Button Text</span>
-                        </a>
-                        <button type="button" class="g_clickable_btn u-cover-absolute u-radius-inherit u-display-none">
-                          <span class="g_clickable_text u-sr-only">Button Text</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div role="listitem" class="home_project_item u-container u-vflex-center-center w-dyn-item">
-                <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
-                  <div class="g_visual_background u-cover-absolute"></div>
-                  <img src="./resources/66de9b4d4c97a9b2d89c0973_Kensei_img_01.webp" loading="lazy" data-parallax="true" alt="Kinsei Pavilion" class="g_visual_img u-cover-absolute" />
-                  <div STYLE="opacity: 70%;" class="g_visual_overlay u-cover-absolute"></div>
-                </figure>
-                <div class="home_project_content u-grid-custom">
-                  <div class="home_project_info u-column-custom u-vflex-left-bottom u-gap-medium">
-                    <div class="home_project_title u-text-transform-uppercase">
-                      <h3 data-anim-para="true">Statuario Premium</h3>
-                    </div>
-                  </div>
-                  <div class="home_project_right u-column-custom u-vflex-left-between">
-                    <div class="home_project_num">
-                      <div data-anim="title">3</div>
-                      <div data-anim="title">/</div>
-                      <div data-anim="title">3</div>
-                    </div>
-                    <div data-anim="button" data-button-style="secondary" class="btn_main_wrap is-secondary">
-                      <div data-button="whipe" class="btn_whipe"></div>
-                      <div aria-hidden="true" class="btn_main_layout u-gap-xsmall u-hflex-center-center">
-                        <div data-button="text-rel" class="btn_main_text is-secondary">see project</div>
-                        <div data-button="text-abs" class="btn_main_text abs_secondary">see project</div>
-                      </div>
-                      <div class="g_clickable_wrap u-cover-absolute u-radius-inherit u-zindex-3">
-                        <a href="/project/statuario-premium" class="g_clickable_link u-cover-absolute u-radius-inherit u-display-block w-inline-block">
-                          <span class="g_clickable_text u-sr-only">Button Text</span>
-                        </a>
-                        <button type="button" class="g_clickable_btn u-cover-absolute u-radius-inherit u-display-none">
-                          <span class="g_clickable_text u-sr-only">Button Text</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <!-- Removed redundant divider lines -->
             </div>
-          </div>
         </section>
-        <section data-padding-bottom="main" data-theme="light" data-padding-top="main" class="home_sustain">
+        <section data-padding-bottom="main" data-padding-top="main" class="home_sustain">
           <div class="h_sustain_container u-container">
             <div class="h_sustain_layout u-grid-custom">
               <div class="h_sustain_col-img u-column-custom">
@@ -1565,7 +1756,8 @@
             <div data-anim="line" class="line"></div>
           </div>
         </section>
-        <section data-padding-bottom="main" data-theme="light" data-padding-top="main" class="home_service">
+        
+        <section data-padding-bottom="main" data-padding-top="main" class="home_service">
           <div class="h_service_container u-container">
             <div class="h_service_layout u-vflex-center-center u-gap-medium">
               <div class="big_txt_row u-hflex-between-top u-gap-large">
@@ -1627,36 +1819,41 @@
               </div>
             </div>
           </div>
-          <div class="line_wrapper is-abs">
-            <div class="line"></div>
-          </div>
-        </section>
-        <section data-theme="dark" class="g_quotes">
-          <div class="quotes_container u-container u-vflex-stretch-between">
-            <div class="quotes_top">
-              <div class="quotes_kanji_parent u-vflex-left-top u-gap-small u-text-transform-uppercase">
-                <div class="quotes_flex u-vflex-center-center u-gap-main">
-                  <div STYLE="max-width: none;" class="g_heading_wrap u-overflow-clip u-text-h5">
-                    <div data-anim="title">(Art in Detail)</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="quotes_btm u-grid-custom">
-              <div class="quotes_paragraph u-column-custom">
-                <div STYLE="max-width: none;" class="g_paragraph_wrap u-text-">
-                  <p data-anim-para="true">We embrace the Italian principle of 'Arte nel Dettaglio' (Art in Detail), recognizing that each project presents a unique opportunity to create something exceptional. This philosophy guides our practice, instilling meticulous care and attention to detail in every selection and installation.</p>
-                </div>
-              </div>
-            </div>
-            <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
-              <div class="g_visual_background u-cover-absolute"></div>
-              <img src="./resources/66de31aed8836018263d0efe_home_img_quote.webp" loading="lazy" data-parallax="true" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="./resources/66de31aed8836018263d0efe_home_img_quote-p-500.webp 500w, ./resources/66de31aed8836018263d0efe_home_img_quote-p-800.webp 800w, ./resources/66de31aed8836018263d0efe_home_img_quote-p-1080.webp 1080w, ./resources/66de31aed8836018263d0efe_home_img_quote-p-1600.webp 1600w, ./resources/66de31aed8836018263d0efe_home_img_quote.webp 1920w" class="g_visual_img u-cover-absolute" />
-              <div STYLE="opacity: 60%;" class="g_visual_overlay u-cover-absolute"></div>
-            </figure>
-          </div>
-        </section>
-        <section data-padding-top="main" data-theme="light" data-padding-bottom="main" class="g_cta">
+    
+</div>
+  <div class="line_wrapper is-abs"><div data-anim="line" class="line"></div></div>
+          </section>
+       
+   
+         </script>
+         <section data-theme="dark" class="g_quotes">
+           <div class="quotes_container u-container u-vflex-stretch-between">
+             <div class="quotes_top">
+               <div class="quotes_kanji_parent u-vflex-left-top u-gap-small u-text-transform-uppercase">
+                 <div class="quotes_flex u-vflex-center-center u-gap-main">
+                   <div STYLE="max-width: none;" class="g_heading_wrap u-overflow-clip u-text-h5">
+                     <div data-anim="title">(Art in Detail)</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="quotes_btm u-grid-custom">
+               <div class="quotes_paragraph u-column-custom">
+                 <div STYLE="max-width: none;" class="g_paragraph_wrap u-text-">
+                   <p data-anim-para="true">We embrace the Italian principle of 'Arte nel Dettaglio' (Art in Detail), recognizing that each project presents a unique opportunity to create something exceptional. This philosophy guides our practice, instilling meticulous care and attention to detail in every selection and installation.</p>
+                 </div>
+               </div>
+             </div>
+             <figure data-scroll-parallax="false" class="g_visual_wrap u-cover-absolute">
+               <div class="g_visual_background u-cover-absolute"></div>
+               <img src="./resources/66de31aed8836018263d0efe_home_img_quote.webp" loading="lazy" data-parallax="true" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="./resources/66de31aed8836018263d0efe_home_img_quote-p-500.webp 500w, ./resources/66de31aed8836018263d0efe_home_img_quote-p-800.webp 800w, ./resources/66de31aed8836018263d0efe_home_img_quote-p-1080.webp 1080w, ./resources/66de31aed8836018263d0efe_home_img_quote-p-1600.webp 1600w, ./resources/66de31aed8836018263d0efe_home_img_quote.webp 1920w" class="g_visual_img u-cover-absolute" />
+               <div STYLE="opacity: 60%;" class="g_visual_overlay u-cover-absolute"></div>
+             </figure>
+           </div>
+  <div class="line_wrapper is-abs"><div data-anim="line" class="line"></div></div>
+          </section>
+        
+        <section data-padding-top="main" data-padding-bottom="main" class="g_cta">
           <div class="cta_container u-container u-grid-custom">
             <div class="cta_col_left u-column-custom u-vflex-left-between">
               <div class="kanji_wrap u-vflex-center-center u-gap-xsmall">
@@ -1710,6 +1907,7 @@
               </div>
             </div>
           </div>
+ <div class="line_wrapper is-abs"><div data-anim="line" class="line"></div></div>
         </section>
       </main>
       <footer class="footer">
@@ -1719,71 +1917,72 @@
               <ul class="footer_nav_list u-vflex-left-top u-gap-row-small">
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (1)</div>
+                    <div data-anim="title">(1)</div>
                   </div>
-                  <a href="index.html" aria-current="page" class="footer_nav_link u-text-h4 w-inline-block w--current">
+                  <a href="index.html" class="footer_nav_link u-text-h4 w-inline-block">
                     <div data-hover="link" data-anim="title">Home</div>
                   </a>
-                  <link rel="prefetch" href="/" />
+                  <link rel="prefetch" href="index.html" />
                 </li>
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (2)</div>
+                    <div data-anim="title">(2)</div>
                   </div>
                   <a href="about-us.html" class="footer_nav_link u-text-h4 w-inline-block">
                     <div data-hover="link" data-anim="title">About</div>
                   </a>
-                  <link rel="prefetch" href="/about-us" />
+                  <link rel="prefetch" href="about-us.html" />
                 </li>
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (3)</div>
+                    <div data-anim="title">(3)</div>
                   </div>
                   <a href="project.html" class="footer_nav_link u-text-h4 w-inline-block">
                     <div data-hover="link" data-anim="title">Project</div>
                   </a>
-                  <link rel="prefetch" href="/project" />
+                  <link rel="prefetch" href="project.html" />
                 </li>
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (4)</div>
+                    <div data-anim="title">(4)</div>
                   </div>
                   <a href="sustainability.html" class="footer_nav_link u-text-h4 w-inline-block">
                     <div data-hover="link" data-anim="title">Sustainability</div>
                   </a>
-                  <link rel="prefetch" href="/sustainability" />
+                  <link rel="prefetch" href="sustainability.html" />
                 </li>
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (5)</div>
+                    <div data-anim="title">(5)</div>
                   </div>
                   <a href="service.html" class="footer_nav_link u-text-h4 w-inline-block">
                     <div data-hover="link" data-anim="title">Service</div>
                   </a>
-                  <link rel="prefetch" href="/service" />
+                  <link rel="prefetch" href="service.html" />
                 </li>
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (6)</div>
+                    <div data-anim="title">(6)</div>
                   </div>
                   <a href="journal.html" class="footer_nav_link u-text-h4 w-inline-block">
                     <div data-hover="link" data-anim="title">Journal</div>
                   </a>
-                  <link rel="prefetch" href="/journal" />
+                  <link rel="prefetch" href="journal.html" />
                 </li>
                 <li class="footer_nav_item u-hflex-left-top u-gap-main">
                   <div class="footer_num">
-                    <div data-anim="title"> (7)</div>
+                    <div data-anim="title">(7)</div>
                   </div>
-                  <a href="contact-us.html" class="footer_nav_link u-text-h4 w-inline-block">
+                  <a href="contact-us.html" aria-current="page" class="footer_nav_link u-text-h4 w-inline-block w--current">
                     <div data-hover="link" data-anim="title">Contact</div>
                   </a>
                 </li>
               </ul>
             </nav>
             <div class="footer_info_col u-column-custom">
-              <div class="footer_info_svg_container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1150 390" fill="none" class="footer_info_svg">
+           
+    <div class="footer_info_col u-column-custom u-vflex-right-between u-gap-large">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1150 390" fill="none" class="footer_info_svg">
       <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
@@ -1881,58 +2080,55 @@
   </script>
 
               <div class="footer_info_row u-grid-custom">
-                <div class="footer_info_left u-vflex-left-top">
-                  <div class="footer_info_item">
+                <div class="footer_info_left u-grid-subgrid u-vflex-left-top u-gap-medium">
+                  <div class="footer_info_item u-vflex-left-top">
                     <div class="footer_info_title u-text-transform-uppercase">
-                      <div data-anim="title">EMAIL</div>
+                      <div data-anim="title">email</div>
                     </div>
                     <div class="footer_info_link u-color-faded">
-                      <a href="mailto:?subject=Contact" data-hover="link" data-anim="title" class="footer_link_item"></a>
+                      <a href="mailto:ufficiotecnico@puccetticreazioni.com?subject=Contact" data-hover="link" data-anim="title" class="footer_link_item">ufficiotecnico@puccetticreazioni.com</a>
                     </div>
                   </div>
-                  <div class="footer_info_item">
+                  <div class="footer_info_item u-vflex-left-top">
                     <div class="footer_info_title u-text-transform-uppercase">
-                      <div data-anim="title">PHONE</div>
+                      <div data-anim="title">Phone</div>
                     </div>
                     <div class="footer_info_link u-color-faded">
-                      <a href="tel:+393336252402" data-hover="link" data-anim="title" class="footer_link_item">+39 3336 252402</a>
+                      <a href="#" data-hover="link" data-anim="title" class="footer_link_item">+81 3-1234-5678</a>
                     </div>
                   </div>
-                  <div class="footer_info_item">
+                  <div class="footer_info_item u-vflex-left-top">
                     <div class="footer_info_title u-text-transform-uppercase">
-                      <div data-anim="title">SOCIAL</div>
+                      <div data-anim="title">Social</div>
                     </div>
                     <ul class="footer_info_social u-vflex-left-top">
                       <li class="footer_info_link u-color-faded">
-                        <a data-hover="link" data-anim="title" href="https://www.instagram.com/pr_creazioni/#" class="footer_link_item">INSTAGRAM</a>
+                        <a data-hover="link" data-anim="title" href="#" class="footer_link_item">Instagram</a>
                       </li>
                       <li class="footer_info_link u-color-faded">
-                        <a data-hover="link" data-anim="title" href="index.html#" class="footer_link_item">FACEBOOK</a>
+                        <a data-hover="link" data-anim="title" href="#" class="footer_link_item">Facebook</a>
                       </li>
                       <li class="footer_info_link u-color-faded">
-                        <a data-hover="link" data-anim="title" href="index.html#" class="footer_link_item">LINKED-IN</a>
+                        <a data-hover="link" data-anim="title" href="#" class="footer_link_item">Linked-in</a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class="footer_info_right u-vflex-left-top">
-                  <div class="footer_info_item">
+                <div class="footer_info_right u-grid-subgrid u-vflex-left-top u-gap-medium">
+                  <div class="footer_info_item u-vflex-left-top">
                     <div class="footer_info_title u-text-transform-uppercase">
-                      <div data-anim="title">OFFICE</div>
+                      <div data-anim="title">Office</div>
                     </div>
                     <div class="footer_info_link u-color-faded">
-                      <a data-hover="link" data-anim="title" href="https://www.google.com/maps/place/Carrara" target="_blank" class="footer_link_item">VIA DEL MARMO, 123 <br />12345 CARRARA, ITALIA</a>
+                      <a data-hover="link" data-anim="title" href="https://maps.app.goo.gl/K8A94YEdWxqnRRLFA" target="_blank" class="footer_link_item">1-1-2 Oshiage, Sumida City, <br />131-0045, Tokyo, Japan </a>
                     </div>
                   </div>
-                  <div class="footer_info_item">
-                    <div class="footer_info_title u-text-transform-uppercase">
-                      <div data-anim="title">HOURS</div>
-                    </div>
-                    <div data-anim="title" class="footer_info_link u-color-faded">MONDAY TO FRIDAY: <br />9:00 AM - 6:00 PM</div>
+                  <div class="footer_info_item u-vflex-left-top">
+                    <div data-anim="title" class="footer_info_link u-color-faded">Monday to Friday: <br />9:00 AM - 6:00 PM </div>
                   </div>
-                  <div class="footer_info_item">
+                  <div class="footer_info_item u-vflex-left-top">
                     <div class="footer_info_link u-color-faded">
-                      <a data-anim="title" href="https://maps.app.goo.gl/K8A94YEdWxqnRRLFA" target="_blank" class="footer_link_item">139.8107° E <br />35.7100° N</a>
+                      <a data-anim="title" href="https://maps.app.goo.gl/K8A94YEdWxqnRRLFA" target="_blank" class="footer_link_item">139.8107° E <br />35.7100° N </a>
                     </div>
                   </div>
                 </div>
@@ -1945,7 +2141,7 @@
           <div class="footer_btm u-container">
             <div class="footer_credit_wrap u-grid-custom">
               <div id="w-node-b74b997f-118a-76a1-33a8-2b019e15bb30-9e15babd" class="footer_credit_item">
-                <div data-anim="title">©2025 – PR CREAZIONI</div>
+                <div data-anim="title">©25 PR CREASIONI – All rights reserved</div>
               </div>
               <div class="footer_credit_right u-column-custom">
                 <div class="footer_credit_sub u-grid-custom">
@@ -1964,10 +2160,39 @@
         </div>
       </footer>
     </div>
-  <script src="d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c82f0e.js?site=66de2f1572bcf866302fd41c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.4a394eb5af8156f2.js" type="text/javascript"></script>
-    <script src="cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.3bf3c06809a02500.js" type="text/javascript"></script>
-    <script src="cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.e52289aa7179481c.js" type="text/javascript"></script>
-    <script src="cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.2dc5e597.fcff477b2f3cb4b4.js" type="text/javascript"></script>
+    <script src="../d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c82f0e.js?site=66de2f1572bcf866302fd41c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="../cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.4a394eb5af8156f2.js" type="text/javascript"></script>
+    <script src="../cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.3bf3c06809a02500.js" type="text/javascript"></script>
+    <script src="../cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.e52289aa7179481c.js" type="text/javascript"></script>
+    <script src="../cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.schunk.2bc9e6fca8f7af28.js" type="text/javascript"></script>
+    <script src="../cdn.prod.website-files.com/66de2f1572bcf866302fd41c/js/saisei-sbj.ff0415ee.439377f96fc6127c.js" type="text/javascript"></script>
+    
+    <!-- Section divider animation script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Make all section dividers visible
+        const sectionDividers = document.querySelectorAll('.section-divider.keep, .pre-footer-divider');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Add a small delay for visual effect
+              setTimeout(() => {
+                entry.target.classList.add('is-visible');
+              }, 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1, // Trigger earlier
+          rootMargin: '0px 0px -10% 0px' // Adjust trigger area
+        });
+        
+        sectionDividers.forEach(divider => {
+          observer.observe(divider);
+        });
+      });
+    </script>
   </body>
 </html>
+
